@@ -2,13 +2,13 @@
 
 - Contact Detection results
 <p align='left'>  
-  <img src='data/image/binary image & watershed line.png' width='600'/>
-  <img src='data/image/src & touch result.png' width='600'/>
+  <img src='data/image/binary image & watershed line.png' width='800'/>
+  <img src='data/image/src & touch result.png' width='800'/>
 </p>
 
 - Paste multiple image results
 <p align='left'>  
-  <img src='data/image/count_contact.png' width='400'/>
-  <img src='data/image/show_count_contact.png' width='400'/>
+  <img src='data/image/count_contact.png' width='600'/>
+  <img src='data/image/show_count_contact.png' width='600'/>
 </p>
 
