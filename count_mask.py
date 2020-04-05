@@ -47,12 +47,13 @@ for t in range(1, num_labels, 1):
     cv.circle(image, (np.int32(cx), np.int32(cy)), 2, (0, 255, 0), 2, 8, 0)
     # 画出外接矩形
     cv.rectangle(image, (x, y), (x+w, y+h), colors[t], 1, 8, 0)
-    cv.putText(image, "No." + str(t), (x, y), cv.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 255), 1)
+    # cv.putText(image, "No." + str(t), (x, y), cv.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 255), 1)
     print("label index %d, area of the label : %d"%(t, area))
 
     cv.imshow("colored labels", image)
     # cv.imwrite("labels.png", image)
     print("total number : ", num_labels - 1)
+    cv.putText(image, "contact N0:" + str(num_labels - 1), (30, 350), cv.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 255), 1)
 
 # input = cv.imread("granule.png")
 # connected_components_stats_demo(input)
