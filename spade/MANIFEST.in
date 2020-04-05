@@ -1,0 +1,13 @@
+# Include the readme
+include README.rst
+
+# Include the license file
+include LICENSE.txt
+
+# Include the default shapes libraries
+include spade/shapes/*.npz
+
+# Include the example files
+include example/*.py
+include example/*.png
+include example/*.tif
