@@ -15,7 +15,9 @@ from PIL.Image import Image
 matplotlib.use('TkAgg')
 
 path = "/home/luolu/PycharmProjects/ParticleDetection/data/image/touch_thresh_pills_02.png"
+img_src = "/home/luolu/PycharmProjects/ParticleDetection/data/image/thresh_pills_02.png"
 original = cv.imread(path)
+src_image = cv.imread(img_src)
 height, width, channels = original.shape
 src = cv.GaussianBlur(original, (5, 5), 0)
 gray = cv.cvtColor(src, cv.COLOR_BGR2GRAY)
@@ -44,16 +46,16 @@ for t in range(1, num_labels, 1):
     x, y, w, h, area = stats[t]
     cx, cy = centers[t]
     # 标出中心位置
-    cv.circle(image, (np.int32(cx), np.int32(cy)), 2, (0, 255, 0), 2, 8, 0)
+    cv.circle(src_image, (np.int32(cx), np.int32(cy)), 2, (0, 255, 0), 2, 8, 0)
     # 画出外接矩形
-    cv.rectangle(image, (x, y), (x+w, y+h), colors[t], 1, 8, 0)
-    # cv.putText(image, "No." + str(t), (x, y), cv.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 255), 1)
+    cv.rectangle(src_image, (x, y), (x+w, y+h), colors[t], 1, 8, 0)
+    cv.putText(src_image, str(t), (x, y), cv.FONT_HERSHEY_SIMPLEX, .5, (0, 0, 255), 1)
     print("label index %d, area of the label : %d"%(t, area))
 
-    cv.imshow("colored labels", image)
+    cv.imshow("colored labels", src_image)
     # cv.imwrite("labels.png", image)
     print("total number : ", num_labels - 1)
-    cv.putText(image, "contact N0:" + str(num_labels - 1), (30, 350), cv.FONT_HERSHEY_SIMPLEX, 1.5, (0, 0, 255), 1)
+    cv.putText(src_image, "contact Sum:" + str(num_labels - 1), (30, 350), cv.FONT_HERSHEY_SIMPLEX, .8, (0, 0, 255), 3)
 
 # input = cv.imread("granule.png")
 # connected_components_stats_demo(input)

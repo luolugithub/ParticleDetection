@@ -19,7 +19,7 @@ root_path = '/home/luolu/PycharmProjects/ParticleDetection/'
 if __name__ == '__main__':
     base_name = ''
     counter = 0
-    for filename in sorted(glob.glob('/home/luolu/PycharmProjects/ParticleDetection/data/temp/*.jpg')):
+    for filename in sorted(glob.glob('/home/luolu/PycharmProjects/ParticleDetection/data/zhutibp_cui0326/*.jpg')):
         img = cv.imread(filename)
         height, width, channels = img.shape
         print(filename)
@@ -61,11 +61,11 @@ if __name__ == '__main__':
         # Show morphological transformation mask
         # cv.imshow('mask', mask)
         # save
-        cv.imwrite(root_path + "data/bp_mask3/" + base_name, mask)
+        # cv.imwrite(root_path + "data/bp_mask3/" + base_name, mask)
 
         # Put mask over top of the original image.
         result = cv.bitwise_and(img, img, mask=mask)
         # save
-        cv.imwrite(root_path + "data/bp_src3/" + base_name, result)
+        cv.imwrite(root_path + "data/bp_src1/" + base_name, result)
         counter = counter + 1
     print('counter: ', counter)

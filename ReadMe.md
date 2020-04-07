@@ -12,3 +12,7 @@
   <img src='data/image/show_count_contact.png' width='600'/>
 </p>
 
+- Contact results show
+<p align='center'>  
+  <img src='data/image/show_thresh_pills_02.png' width='800'/>
+</p>

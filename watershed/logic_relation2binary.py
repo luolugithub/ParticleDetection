@@ -9,8 +9,8 @@
 import cv2
 import numpy as np
 
-img1 = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/thresh_pills_02.png', 0)
-img2 = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/wline_pills_02.png', 0)
+img1 = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/binary_ct.png', 0)
+img2 = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/wline_ct.png', 0)
 
 img_bwa = cv2.bitwise_and(img1, img2)
 img_bwo = cv2.bitwise_or(img1, img2)

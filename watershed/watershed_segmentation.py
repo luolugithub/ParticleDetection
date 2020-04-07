@@ -15,21 +15,21 @@ from skimage.feature import peak_local_max
 from skimage.filters import threshold_local
 from PIL import Image
 
-img = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/thresh_pills_02.png', 0)
+img = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/image/binary_ct.png', 0)
 
 '''Adaptive thersholding 
    calculates thresholds in regions of size block_size surrounding each pixel
    to handle the non-uniform background'''
-block_size = 51
+block_size = 5
 adaptive_thresh = threshold_local(img, block_size)  # , offset=10)
 binary_adaptive = img > adaptive_thresh
 # cv2.imwrite('/home/luolu/PycharmProjects/ParticleDetection/data/image/binary_37.png', Image.fromarray(binary_adaptive))
 
 # Calculate Euclidean distance
-distance = ndi.distance_transform_edt(binary_adaptive)
+distance = ndi.distance_transform_edt(img)
 
 # Find local maxima of the distance map
-local_maxi = peak_local_max(distance, labels=binary_adaptive, footprint=np.ones((51, 51)), indices=False)
+local_maxi = peak_local_max(distance, labels=binary_adaptive, footprint=np.ones((31, 31)), indices=False)
 # Label the maxima
 markers = ndi.label(local_maxi)[0]
 
@@ -47,4 +47,4 @@ plt.show()
 # cv2.imwrite('/home/luolu/PycharmProjects/ParticleDetection/data/image/wline_pills_02', labels)
 
 img = Image.fromarray(labels == 0)
-# img.save('/home/luolu/PycharmProjects/ParticleDetection/data/image/wline_37.png')
+img.save('/home/luolu/PycharmProjects/ParticleDetection/data/image/wline_ct.png')
