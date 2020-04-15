@@ -52,7 +52,7 @@ cv2.createTrackbar('highVal', 'colorTest', icol[5], 255, nothing)
 # Raspberry pi file path example.
 # frame = cv2.imread('/home/pi/python3/opencv/color-test/colour-circles-test.jpg')
 # Windows file path example.
-frame = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/zhutibp_cui0326/8.jpg')
+frame = cv2.imread('/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/yashi.png')
 
 while True:
     # Get HSV values from the GUI sliders.
@@ -104,5 +104,5 @@ while True:
     if k == 27:
         break
 
-cv2.waitKey()
+cv2.waitKey(0)
 cv2.destroyAllWindows()

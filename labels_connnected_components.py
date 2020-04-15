@@ -21,7 +21,7 @@ np.random.seed(1)
 
 matplotlib.use('TkAgg')
 
-path = "/data/mask/close_2_mask_fen.png"
+path = "/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/edge/edge_cl.png"
 
 img = cv2.imread(path)
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

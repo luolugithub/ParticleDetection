@@ -21,7 +21,7 @@ import numpy as np
 
 
 if __name__ == '__main__':
-    for filename in glob.glob('/home/luolu/PycharmProjects/color_detection/data/result_qaak/caolv_mask/*.png'):
+    for filename in glob.glob('/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/edge/*.png'):
         img = cv.imread(filename)
         # print(filename)
         base_name = os.path.basename(filename)
@@ -42,4 +42,4 @@ if __name__ == '__main__':
                     print(item)
 
         img.putdata(newData)
-        img.save("/home/luolu/PycharmProjects/color_detection/data/result_qaak/transparent/" + base_name)
+        img.save("/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/trans/" + base_name)

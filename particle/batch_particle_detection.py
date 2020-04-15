@@ -19,7 +19,7 @@ root_path = '/home/luolu/PycharmProjects/ParticleDetection/'
 if __name__ == '__main__':
     base_name = ''
     counter = 0
-    for filename in sorted(glob.glob('/home/luolu/PycharmProjects/ParticleDetection/data/zhutibp_cui0326/*.jpg')):
+    for filename in sorted(glob.glob('/home/luolu/PycharmProjects/ParticleDetection/data/1/123.jpg')):
         img = cv.imread(filename)
         height, width, channels = img.shape
         print(filename)
@@ -48,8 +48,8 @@ if __name__ == '__main__':
         # 0, 0, 0, 255, 115, 255   temp
         # 0, 0, 0, 255, 84, 255   temp
         # 0, 0, 134, 255, 255, 255   temp
-        colorLow = np.array([0, 0, 122])
-        colorHigh = np.array([255, 50, 255])
+        colorLow = np.array([0, 0, 79])
+        colorHigh = np.array([255, 115, 255])
         mask = cv.inRange(hsv, colorLow, colorHigh)
         # Show the first mask
         # cv.imshow('mask-plain', mask)
@@ -66,6 +66,6 @@ if __name__ == '__main__':
         # Put mask over top of the original image.
         result = cv.bitwise_and(img, img, mask=mask)
         # save
-        cv.imwrite(root_path + "data/bp_src1/" + base_name, result)
+        cv.imwrite(root_path + "data/1_src/" + base_name, result)
         counter = counter + 1
     print('counter: ', counter)

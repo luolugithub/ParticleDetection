@@ -8,7 +8,7 @@
 
 from PIL import Image
 
-img = Image.open('/home/luolu/PycharmProjects/ParticleDetection/data/image/line_thresh_pills_02.png')
+img = Image.open('/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/color/fen_color.png')
 img = img.convert("RGBA")
 datas = img.getdata()
 
@@ -25,4 +25,4 @@ for item in datas:
 
 
 img.putdata(newData)
-img.save("/home/luolu/PycharmProjects/ParticleDetection/data/image/trans_line_thresh_pills_02.png", "PNG")
+img.save("/home/luolu/PycharmProjects/ParticleDetection/data/yashi_qscan/trans/fen_color.png", "PNG")
